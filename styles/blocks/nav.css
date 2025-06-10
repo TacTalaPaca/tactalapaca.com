@@ -329,6 +329,7 @@
 
   .nav:hover {
     width: 200px;
+    border-color: var(--c0);
   }
 
   .nav:hover .nav-page span,
@@ -356,11 +357,6 @@
   .nav.nav-pinned .nav-pin-toggle-btn span {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  main {
-    margin-left: 80px;
-    transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   body.nav-is-pinned main {
@@ -445,10 +441,6 @@
 
   .nav-submenu-toggle.active {
     background-color: rgba(0, 195, 116, 0.2);
-  }
-
-  main {
-    margin-left: 0 !important;
   }
 
   body.nav-is-pinned main {

@@ -630,37 +630,6 @@
   text-align: center;
 }
 
-.enrollment-intro {
-  background-color: var(--c2-l-70);
-  border: 1px solid var(--c4-l);
-  border-radius: 12px;
-  box-shadow: var(--sh-l);
-  padding: 24px;
-  margin-bottom: 32px;
-  transition: transform var(--ts0) ease;
-}
-.dark .enrollment-intro {
-  background-color: var(--c2-d-70);
-  border-color: var(--c4-d);
-  box-shadow: var(--sh-d);
-}
-.enrollment-intro:hover {
-  border-color: var(--c0);
-  transform: translateY(-4px);
-}
-
-.enrollment-intro p {
-  color: var(--c1-d);
-  font-size: 16px;
-  margin: 0;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.dark .enrollment-intro p {
-  color: var(--c1-l);
-}
-
 .enrollment-content {
   display: flex;
   flex-direction: column;

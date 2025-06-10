@@ -109,6 +109,7 @@ main {
   margin-left: 70px;
   padding: 20px;
   text-align: center;
+  transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (max-width: 768px) {
   main {
@@ -324,5 +325,30 @@ main {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(0, 227, 133, 0), 0 0 0 0 rgba(0, 227, 133, 0), 0 0 0 0 rgba(0, 227, 133, 0);
+  }
+}
+
+/* ============================== */
+/* SHOP */
+
+.shop {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--c4-l);
+  background-color: var(--c1-d);
+  padding: 2px;
+}
+
+.dark .shop {
+  border-radius: 10px;
+  border: 1px solid var(--c4-d);
+}
+
+@media screen and (max-width: 768px) {
+  #bmc-wbtn {
+    display: none !important;
+  }
+  .shop {
+    margin-bottom: 10px;
   }
 }
