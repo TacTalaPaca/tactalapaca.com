@@ -1,0 +1,372 @@
+:root {
+  /* Colors - Accents */
+  --c0: #00e385;
+  --c1: #00c374;
+
+  /* Colors - Light Theme */
+  --c1-l: #fafafa; /* bg1 + font */
+  --c2-l: #f2f2f2; /* bg2 */
+  --c3-l: #e6e6e6; /* bg3 */
+  --c4-l: #d9d9d9; /* border */
+  --sh-l: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  /* Colors - Dark Theme */
+  --c1-d: #121212; /* bg1 + font */
+  --c2-d: #171717; /* bg2 */
+  --c3-d: #1f1f1f; /* bg3 */
+  --c4-d: #2b2b2b; /* border */
+  --sh-d: 0 0 15px rgba(0, 0, 0, 0.5);
+
+  /* Timing */
+  --ts: 0.35s;
+  --ts0: 0.15s;
+}
+
+/* ==================================================== */
+/* AFFILIATE MENU */
+
+.affiliate-menu {
+  /* Visual */
+  background-color: var(--c1-l);
+  border: 1px solid var(--c4-l);
+  box-shadow: var(--sh-l);
+
+  /* Positioning */
+  position: fixed;
+  right: -465px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.6);
+  transform-origin: right center;
+  z-index: 3;
+
+  /* Box Model */
+  width: 400px;
+  padding: 10px;
+  padding-top: 0;
+  border-radius: 10px 0 0 10px;
+
+  /* Animation */
+  transition: transform var(--ts) ease, right var(--ts) ease, opacity var(--ts) ease;
+}
+
+.affiliate-menu.active {
+  /* Positioning */
+  right: 0;
+  transform: translateY(-50%) scale(1);
+
+  /* Visual */
+  opacity: 1;
+}
+
+.dark .affiliate-menu {
+  /* Visual */
+  background-color: var(--c1-d);
+  border-color: var(--c4-d);
+  color: var(--c1-l);
+  box-shadow: var(--sh-d);
+}
+
+/* ==================================================== */
+/* AFFILIATE TOGGLE */
+
+.affiliate-toggle {
+  /* Visual */
+  background-color: var(--c1-l);
+  border: 1px solid var(--c4-l);
+  background-image: url('/assets/icons/left_arrow1.svg');
+  box-shadow: var(--sh-l);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  border-radius: 10px 0 0 10px;
+
+  /* Positioning */
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+
+  /* Box Model */
+  width: 35px;
+  height: 90px;
+
+  /* Animation */
+  transition: width var(--ts0) ease, height var(--ts0) ease;
+}
+
+.affiliate-toggle:hover {
+  /* Visual */
+  background-color: var(--c3-l);
+
+  /* Box Model */
+  width: 45px;
+  height: 100px;
+}
+
+.affiliate-toggle:active {
+  /* Box Model */
+  width: 35px;
+  height: 90px;
+}
+
+.dark .affiliate-toggle {
+  /* Visual */
+  background-color: var(--c1-d);
+  border-color: var(--c4-d);
+  color: var(--c1-l);
+  background-image: url('/assets/icons/left_arrow2.svg');
+  box-shadow: var(--sh-d);
+}
+
+.dark .affiliate-toggle:hover {
+  /* Visual */
+  background-color: var(--c3-d);
+}
+
+.dark .affiliate-toggle:active {
+  /* Visual */
+  background-color: var(--c3-d);
+}
+
+/* ==================================================== */
+/* AFFILIATE SECTIONS */
+
+.affiliate-section h2 {
+  /* Positioning */
+  margin-right: 35px;
+  position: relative;
+
+  /* Typography */
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--c1-d);
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  /* Visual */
+  padding-bottom: 8px;
+
+  /* Animation */
+  transition: color var(--ts0) ease, transform var(--ts0) ease;
+}
+
+.affiliate-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--c0);
+  transition: width var(--ts0) ease;
+}
+
+.affiliate-section:hover h2::after {
+  width: 100px;
+}
+
+.dark .affiliate-section h2 {
+  /* Typography */
+  color: var(--c1-l);
+}
+
+/* ==================================================== */
+/* AFFILIATE LINKS */
+
+.affiliate-links {
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.affiliate-link {
+  /* Visual */
+  background-color: var(--c2-l);
+  border: 1px solid var(--c4-l);
+
+  /* Box Model */
+  padding: 15px;
+  margin-right: 35px;
+  border-radius: 7px;
+
+  /* Typography */
+  color: var(--c1-d);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+
+  /* Display */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  position: relative;
+
+  /* Animation */
+  transition: transform var(--ts0) ease;
+}
+
+.affiliate-link::before {
+  /* Visual */
+  content: '';
+  background-color: var(--c0);
+  opacity: 0;
+
+  /* Positioning */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Box Model */
+  height: 70%;
+  width: 2px;
+
+  /* Animation */
+  transition: opacity var(--ts0) ease;
+}
+
+.affiliate-link:hover {
+  /* Visual */
+  background-color: var(--c3-l);
+
+  /* Positioning */
+  transform: translateX(-5px);
+}
+
+.affiliate-link:hover::before {
+  /* Visual */
+  opacity: 1;
+}
+
+.affiliate-link:active {
+  /* Positioning */
+  transform: translateX(-2px);
+}
+
+.dark .affiliate-link {
+  /* Visual */
+  background-color: var(--c2-d);
+  border-color: var(--c4-d);
+
+  /* Typography */
+  color: var(--c1-l);
+}
+
+.dark .affiliate-link:hover {
+  /* Visual */
+  background-color: var(--c3-d);
+}
+
+/* ============================ */
+/* AFFILIATE INFO */
+
+.affiliate-info {
+  /* Display */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.affiliate-logo {
+  /* Box Model */
+  width: 30px;
+  height: 30px;
+
+  /* Visual */
+  object-fit: contain;
+
+  /* Animation */
+  transition: transform var(--ts0) ease;
+}
+
+.affiliate-link:hover .affiliate-logo {
+  /* Positioning */
+  transform: scale(1.1);
+}
+
+/* ============================ */
+/* COPY BUTTON */
+
+.copy-code-btn {
+  /* Visual */
+  background-color: var(--c0);
+  border: none;
+  cursor: pointer;
+
+  /* Typography */
+  color: var(--c1-l);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  /* Box Model */
+  padding: 8px 12px;
+  border-radius: 5px;
+
+  /* Animation */
+  transition: transform var(--ts0) ease;
+}
+
+.copy-code-btn:hover {
+  /* Visual */
+  background-color: var(--c1);
+}
+
+.copy-code-btn.copied {
+  /* Visual */
+  background-color: var(--c1-d);
+
+  /* Typography */
+  color: var(--c1-l);
+
+  /* Display */
+  pointer-events: none;
+}
+
+.dark .copy-code-btn {
+  /* Visual */
+  background-color: var(--c0);
+
+  /* Typography */
+  color: var(--c1-d);
+}
+
+.dark .copy-code-btn:hover {
+  /* Visual */
+  background-color: var(--c1);
+}
+
+.dark .copy-code-btn.copied {
+  /* Visual */
+  background-color: var(--c3-l);
+
+  /* Typography */
+  color: var(--c1-d);
+}
+
+/* ==================================================== */
+/* MOBILE RESPONSIVE STYLES */
+
+@media screen and (max-width: 768px) {
+  .affiliate-menu {
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .affiliate-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copy-code-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+}

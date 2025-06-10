@@ -1,0 +1,9 @@
+# Don't redirect static asset folders
+/assets/* /assets/:splat 200
+/blocks/* /blocks/:splat 200
+/scripts/* /scripts/:splat 200
+/styles/* /styles/:splat 200
+/manifest.json /manifest.json 200
+
+# Redirect everything else to /pages/
+/* /pages/:splat 200

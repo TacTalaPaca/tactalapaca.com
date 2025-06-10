@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FAVICON ============== -->
+    <link rel="shortcut icon" href="/assets/ttp_logo.webp" type="image/x-icon" />
+    <!-- TITLE ================ -->
+    <title>TacTalaPaca</title>
+    <!-- DESCRIPTION ========== -->
+    <meta name="description" content="TacTalaPaca is a team of passionate individuals dedicated to making a difference through collaboration, creativity, and faith." />
+    <!-- CSS LINKS ============ -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- ------- -->
+    <link rel="stylesheet" href="/styles/blocks/nav.css" />
+    <link rel="stylesheet" href="/styles/blocks/aff.css" />
+    <link rel="stylesheet" href="/styles/blocks/ftr.css" />
+    <!-- ------- -->
+    <link rel="stylesheet" href="/styles/pages/dashboard.css" />
+    <!-- FONTS ================ -->
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Italic.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- JS LINKS ============= -->
+    <script src="/scripts/include.js" defer></script>
+    <script src="/scripts/language.js"></script>
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/mobile-nav.js" defer></script>
+    <script src="/scripts/nav-pin.js" defer></script>
+    <!-- ------- -->
+    <script src="/scripts/search.js" defer></script>
+    <script>
+      // Map zoom functionality
+      document.addEventListener('DOMContentLoaded', function () {
+        const worldMap = document.getElementById('worldMap');
+        if (worldMap) {
+          worldMap.addEventListener('click', function () {
+            this.classList.toggle('zoomed');
+          });
+        }
+      });
+    </script>
+    <!-- BMAC WIDGET -->
+    <script defer data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tactalapaca" data-description="Support us on Buy me a coffee!" data-message="" data-color="#00e385" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <!-- ====================== -->
+  </head>
+
+  <body>
+    <!-- MOBILE MENU BUTTON-->
+    <button class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="menu-overlay"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="nav">
+      <div class="nav-item nav-active">
+        <a href="/" class="nav-page"><span>Dashboard</span></a>
+      </div>
+
+      <div class="nav-item">
+        <a href="/library/" class="nav-page"><span>Library*</span></a>
+        <button class="nav-submenu-toggle" aria-label="Toggle Library submenu" data-target="library-submenu"></button>
+        <div class="nav-submenu" id="library-submenu">
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/playground/" class="nav-page"><span>Playground*</span></a>
+        <button class="nav-submenu-toggle" aria-label="Toggle Playground submenu" data-target="playground-submenu"></button>
+        <div class="nav-submenu" id="playground-submenu">
+          <a href="/playground/touch-grass/" class="nav-submenu-page">Touch Grass</a>
+          <a href="/playground/scripture-compass/" class="nav-submenu-page">Scripture Compass</a>
+          <a href="/playground/life-calendar/" class="nav-submenu-page">Life Calendar</a>
+          <a href="/playground/morse-code/" class="nav-submenu-page">Morse Code</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/toolbox/" class="nav-page"><span>Toolbox*</span></a>
+        <button class="nav-submenu-toggle" aria-label="Toggle Toolbox submenu" data-target="toolbox-submenu"></button>
+        <div class="nav-submenu" id="toolbox-submenu">
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+          <a href="/???" class="nav-submenu-page">????????</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/contact/" class="nav-page"><span>Contact*</span></a>
+      </div>
+
+      <div class="nav-item">
+        <a href="/shop/" class="nav-page"><span>Shop (open)</span></a>
+      </div>
+
+      <div class="nav-item nav-item-pin-toggle">
+        <a class="nav-page nav-pin-toggle-btn" id="navPinBtn" aria-label="Pin navigation menu" aria-pressed="false">
+          <span>Pin Menu</span>
+        </a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-page language" id="language"
+          ><span>Languages <br />(Eng/Rom)</span></a
+        >
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-page theme" id="theme"><span>Light/Dark</span></a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- LOGO SECTION -->
+      <a href="/" class="cmp-logo">
+        <img src="/assets/ttp_logo.svg" alt="TacTalaPaca Logo" class="cmp-logo-image" />
+      </a>
+      <h1 class="h1">TacTalaPaca</h1>
+
+      <!-- SEARCH SECTION -->
+      <section class="search">
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" placeholder="Search pages, content..." id="globalSearch" autocomplete="off" />
+          </div>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+      </section>
+
+      <!-- TIMELINE SECTION -->
+      <section>
+        <h2 class="eng h2">Our Journey</h2>
+        <h2 class="rom h2">Călătoria noastră</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>2023</h3>
+              <p class="eng">The name TacTalaPaca originally appeared as a title for a school project proposed by Danuja. Then we decided to form a group, a team. We searched for a long time for a suitable name, and after many proposals and debates, Bogdan suggested using TacTalaPaca. Danuja agreed, and thus, our team took shape. At that time, we had no vision, we only knew that we wanted to form a special team. Danuja came up with the plans, and Bogdan understood his vision, the two of them laid the foundations of the team.</p>
+              <p class="rom">Numele ȚacTalaPaca a apărut inițial ca titlu pentru un proiect școlar propus de Danuja. Pe urmă am decis să formăm un grup, o echipă. Am căutat îndelung un nume potrivit, iar după multe propuneri și dezbateri, Bogdan a sugerat să folosim ȚacTalaPaca. Danuja a fost de acord, iar astfel, echipa noastră a prins contur. Pe vremea aia nu aveam nici o viziune, știam doar că vrem să formăm o echipă specială. Danuja a venit cu planurile, iar Bogdan i-a înțeles viziunea, cei doi au pus bazele echipei.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>2024</h3>
+              <p class="eng">A year full of trials and revelations. The team grew, we took friends from our class and school with every opportunity, as was the plan from the beginning. We all faced many challenges this year. Beautiful moments, dark moments and unseen moments, but in the darkest moments, we understood the truth. God, who became our foundation and strength. All the plans that didn't work, all the failures, all the dark nights, paved the way, we lost nothing.</p>
+              <p class="rom" style="display: none">Un an plin de încercări și revelații. Echipa a crescut, am luat prieteni din clasa noastră și din școală cu fiecare oportunitate, așa cum era în plan de la început. Am întâmpinat totuși foarte multe provocări în acest an. Momente frumoase, momente întunecate și momente nevăzute, dar în cele mai negre momente, am înțeles adevărul. Dumnezeu, care a devenit fundația și puterea noastră. Toate planurile care nu au funcționat, toate eșecurile, toate nopțile negre, au pavat calea, nu am pierdut nimic.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="eng">PRESENT</h3>
+              <h3 class="rom" style="display: none">PREZENT</h3>
+              <p class="eng">This is the year we leave the past behind and step forward with renewed vision and faith. We still have many challenges, but we know that God works in His time and will. We want to inspire and learn from everyone. None of what we have achieved would have been possible without the people around us. There is knowledge in everyone and everything, even when we have different visions. We want to work together, each contributing their talents and passions, supported by the team. Rivalries and disagreements are not obstacles, but part of the process.</p>
+              <p class="rom" style="display: none">Acesta este anul în care lăsăm trecutul în urmă și pășim înainte cu o viziune și credință reînnoită. Avem încă multe provocări, dar știm că Dumnezeu lucrează în timpul și voia Lui. Vrem să inspirăm și să învățăm de la toți. Nimic din ce am realizat n-ar fi fost posibil fără oamenii din jurul nostru. Există cunoștințe în oricine și orice, chiar și când avem viziuni diferite. Ne dorim să lucrăm împreună, fiecare contribuind cu talentele și pasiunile sale, susținut de echipă. Rivalitățile și neînțelegerile nu sunt obstacole, ci parte din proces.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="eng">FUTURE</h3>
+              <h3 class="rom" style="display: none">VIITOR</h3>
+              <p class="eng">In order to work as a team, you need people. Anyone who wants to be part of the ȚacTalaPaca team, anyone who wants to be part of something, anyone who has a vision, can do it now. At the bottom of the page is a registration form. We believe in the power of each individual to bring something unique. With a diverse, talented and united team, each individual with their own talents and practices, and all this under the guidance of God, we can change everything one step at a time.</p>
+              <p class="rom" style="display: none">Pentru a putea lucra ca o echipă, este nevoie de oameni. Oricine vrea să facă parte din echipa ȚacTalaPaca, oricine vrea să facă parte din ceva, oricine are o viziune, o poate face char acum. În josul paginii este un formular de înscriere. Credem în puterea fiecărui individ de a aduce ceva unic. Cu o echipă diversă, talentată și unită, fiecare individ cu talentele și practicile sale, și toate astea sub ghidarea Lui Dumnezeu, putem schimba totul pe rând.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section>
+        <h2 class="eng h2">Where we are</h2>
+        <h2 class="rom h2">Unde suntem</h2>
+
+        <div class="map">
+          <img src="/assets/world.svg" alt="World Map" class="map-image" id="worldMap" />
+          <div class="map-overlay">
+            <p class="eng">Click the map to focus on Romania</p>
+            <p class="rom">Apasă pe hartă pentru a focusa pe România</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RANKING SECTION -->
+      <section class="ranking-section">
+        <h2 class="eng h2">Team Rankings</h2>
+        <h2 class="rom h2" style="display: none">Rangurile Echipei</h2>
+        <div class="ranks-container">
+          <div class="rank-row">
+            <div class="rank rank-7">
+              <div class="rank-circle">R7</div>
+            </div>
+            <div class="rank rank-6">
+              <div class="rank-circle">R6</div>
+            </div>
+            <div class="rank rank-5">
+              <div class="rank-circle">R5</div>
+            </div>
+            <div class="rank rank-4">
+              <div class="rank-circle">R4</div>
+            </div>
+          </div>
+          <div class="rank-row">
+            <div class="rank rank-3">
+              <div class="rank-circle">R3</div>
+            </div>
+            <div class="rank rank-2">
+              <div class="rank-circle">R2</div>
+            </div>
+            <div class="rank rank-1">
+              <div class="rank-circle">R1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ENROLLMENT SECTION -->
+      <section class="enroll-section">
+        <h2 class="eng h2">Wanna' be part of The Team?</h2>
+        <h2 class="rom h2" style="display: none">Vrei să faci parte din Echipă?</h2>
+        <p class="eng">Join our diverse team of thinkers, creators, and innovators. Participation is completely free - all you need is willingness and dedication!</p>
+        <p class="rom" style="display: none">Alătură-te echipei noastre diverse de gânditori, creatori și inovatori. Participarea este complet gratuită - tot ce ai nevoie este dorință și dedicare!</p>
+
+        <div class="mensa-card">
+          <div class="mensa-header">
+            <div class="mensa-icon">IQ</div>
+            <div class="mensa-title">
+              <h3 class="eng">MENSA Online IQ Test</h3>
+              <h3 class="rom" style="display: none">Test IQ MENSA Online</h3>
+            </div>
+          </div>
+
+          <div class="mensa-content">
+            <p class="eng">Before applying, please take a quick assessment:</p>
+            <p class="rom" style="display: none">Înainte de a aplica, te rugăm să faci o evaluare rapidă:</p>
+
+            <div class="mensa-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text eng">Take the free MENSA online IQ test</div>
+                <div class="step-text rom" style="display: none">Fă testul gratuit MENSA de IQ online</div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text eng">Take a screenshot of your result</div>
+                <div class="step-text rom" style="display: none">Fă un screenshot cu rezultatul tău</div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text eng">Attach the screenshot in the application form</div>
+                <div class="step-text rom" style="display: none">Atașează screenshot-ul în formularul de aplicare</div>
+              </div>
+            </div>
+
+            <div class="mensa-note">
+              <p class="eng">This score helps us understand your thinking patterns - there's no minimum requirement.</p>
+              <p class="rom" style="display: none">Acest scor ne ajută să înțelegem tiparul tău de gândire - nu există o cerință minimă.</p>
+            </div>
+
+            <a href="https://test.mensa.no/" target="_blank" class="mensa-button">
+              <span class="eng">Take the Test</span>
+              <span class="rom" style="display: none">Fă Testul</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="/enrollment/" target="_blank" class="enroll-button">
+          <span class="eng">Apply Now</span>
+          <span class="rom" style="display: none">Aplică Acum</span>
+        </a>
+      </section>
+
+      <!-- FOOTER -->
+      <div data-include="/blocks/ftr.html"></div>
+    </main>
+  </body>
+</html>
