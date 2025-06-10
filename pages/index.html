@@ -29,6 +29,7 @@
     <script src="/scripts/nav-pin.js" defer></script>
     <!-- ------- -->
     <script src="/scripts/search.js" defer></script>
+    <script src="/scripts/verse-of-day.js" defer></script>
     <script>
       // Map zoom functionality
       document.addEventListener('DOMContentLoaded', function () {
@@ -136,6 +137,32 @@
           </div>
           <div class="search-suggestions" id="searchSuggestions"></div>
           <div class="search-results" id="searchResults"></div>
+        </div>
+      </section>
+
+      <!-- VERSE OF THE DAY SECTION -->
+      <section>
+        <h2 class="eng h2">Verse of the Day</h2>
+          <h2 class="rom h2" style="display: none">Versetul Zilei</h2>
+
+        <div class="verse-container">
+          <div class="verse-loading" id="verseLoading">
+            <span class="eng">Loading today's verse...</span>
+            <span class="rom" style="display: none">Se încarcă versetul de azi...</span>
+          </div>
+          
+          <blockquote class="verse-text" id="verseText" style="display: none;"></blockquote>
+          <cite class="verse-reference" id="verseReference" style="display: none;"></cite>
+          
+          <div class="verse-error" id="verseError" style="display: none;">
+            <p class="eng">Unable to load today's verse. Please try again later.</p>
+            <p class="rom" style="display: none">Nu s-a putut încărca versetul de azi. Te rugăm să încerci mai târziu.</p>
+          </div>
+          
+          <div class="verse-attribution">
+            <p class="eng">Powered by <a href="https://ourmanna.com/" target="_blank" rel="noopener">OurManna.com</a></p>
+            <p class="rom" style="display: none">Susținut de <a href="https://ourmanna.com/" target="_blank" rel="noopener">OurManna.com</a></p>
+          </div>
         </div>
       </section>
 

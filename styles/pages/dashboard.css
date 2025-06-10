@@ -131,7 +131,6 @@
   border: 1px solid var(--c0);
   border-radius: 4px;
   padding: 4px 8px;
-  font-family: 'Libre Baskerville', serif;
   font-size: 12px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -144,7 +143,6 @@
 .search-item-preview {
   color: var(--c1-d);
   opacity: 0.7;
-  font-family: 'Libre Baskerville', serif;
   font-size: 12px;
   line-height: 1.4;
 }
@@ -168,7 +166,6 @@
   opacity: 0.7;
   padding: 20px;
   text-align: center;
-  font-family: 'Libre Baskerville', serif;
 }
 .dark .search-no-results {
   color: var(--c1-l);
@@ -178,10 +175,80 @@
   .search {
     padding: 0 12px;
   }
+}
 
-  .search-input {
-    font-size: 16px;
-  }
+/* ============================== */
+/* VERSE OF THE DAY SECTION */
+.verse-container {
+  background-color: var(--c2-l-70);
+  border: 1px solid var(--c4-l);
+  border-radius: 12px;
+  box-shadow: var(--sh-l);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 16px 10px 16px;
+  text-align: center;
+  transition: transform var(--ts0) ease;
+}
+.dark .verse-container {
+  background-color: var(--c2-d-70);
+  border-color: var(--c4-d);
+  box-shadow: var(--sh-d);
+}
+.verse-container:hover {
+  border-color: var(--c0);
+  transform: translateY(-4px);
+}
+
+.verse-text {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.verse-reference {
+  color: var(--c0);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.verse-loading,
+.verse-error {
+  font-style: italic;
+  padding: 20px;
+  margin: 16px 0;
+}
+.dark .verse-loading,
+.dark .verse-error {
+  color: var(--c1-l);
+}
+
+.verse-attribution {
+  padding-top: 10px;
+  border-top: 1px solid var(--c4-l);
+}
+.dark .verse-attribution {
+  border-color: var(--c4-d);
+}
+
+.verse-attribution p {
+  opacity: 0.6;
+  font-size: 14px;
+  margin: 0;
+}
+.dark .verse-attribution p {
+  color: var(--c1-l);
+}
+
+.verse-attribution a {
+  color: var(--c0);
+  text-decoration: none;
+}
+.verse-attribution a:hover {
+  text-decoration: underline;
 }
 
 /* ============================== */
@@ -776,17 +843,22 @@
   padding: 24px;
   background-color: var(--c1-l-70);
   border: 1px solid var(--c4-l);
+  box-shadow: var(--sh-l);
   border-radius: 12px;
   transition: transform var(--ts0) ease;
 }
 .dark .enrollment-action {
   background-color: var(--c2-d-70);
   border-color: var(--c4-d);
+  box-shadow: var(--sh-d);
 }
 .enrollment-action:hover {
   border-color: var(--c0);
   transform: translateY(-4px);
 }
+
+/* ============================== */
+/* ENROLLMENT BUTTONS */
 
 .enroll-button {
   background-color: var(--c0);
