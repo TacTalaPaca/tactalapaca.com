@@ -4,7 +4,7 @@
 /scripts/* /scripts/:splat 200
 /styles/* /styles/:splat 200
 /manifest.json /manifest.json 200
-/ads.txt /ads.txt 200   <-- ADD THIS LINE
+/ads.txt /ads.txt 200
 
 # Redirect everything else to /pages/
 /* /pages/:splat 200
