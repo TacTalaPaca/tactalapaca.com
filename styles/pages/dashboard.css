@@ -1,3 +1,6 @@
+/* ============================== */
+/* SEARCH SECTION */
+
 .search {
   max-width: 800px;
   margin: 40px auto;
@@ -62,7 +65,7 @@
   z-index: 9;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   transition: opacity var(--ts) ease, visibility var(--ts) ease, transform var(--ts) ease;
   margin-top: 8px;
 }
@@ -181,6 +184,9 @@
   }
 }
 
+/* ============================== */
+/* TIMELINE SECTION */
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -294,6 +300,9 @@
   opacity: 1;
 }
 
+/* ============================== */
+/* MAP SECTION */
+
 .map {
   background-color: var(--c2-l-70);
   border: 1px solid var(--c4-l);
@@ -381,20 +390,11 @@
   }
 }
 
-.ranking-section {
-  margin-top: 48px;
-}
-
-.skills-heading {
-  margin-top: 48px;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-}
+/* ============================== */
+/* RANKING SECTION */
 
 .ranks-container {
-  background-color: var(--c1-l);
+  background-color: var(--c1-l-70);
   border: 1px solid var(--c4-l);
   border-radius: 12px;
   box-shadow: var(--sh-l);
@@ -407,7 +407,7 @@
 }
 
 .dark .ranks-container {
-  background-color: var(--c1-d);
+  background-color: var(--c1-d-70);
   border-color: var(--c4-d);
   box-shadow: var(--sh-d);
 }
@@ -554,78 +554,71 @@
   }
 }
 
-.enroll-section {
-  background-color: var(--c1-l);
+/* ============================== */
+/* ENROLLMENT SECTION */
+
+.enrollment-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.enrollment-intro {
+  background-color: var(--c2-l-70);
   border: 1px solid var(--c4-l);
   border-radius: 12px;
   box-shadow: var(--sh-l);
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 16px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 24px;
+  margin-bottom: 32px;
+  transition: transform var(--ts0) ease;
 }
-.dark .enroll-section {
-  background-color: var(--c2-d);
+.dark .enrollment-intro {
+  background-color: var(--c2-d-70);
   border-color: var(--c4-d);
   box-shadow: var(--sh-d);
 }
-.enroll-section:hover {
+.enrollment-intro:hover {
   border-color: var(--c0);
+  transform: translateY(-4px);
 }
-.enroll-section p {
+
+.enrollment-intro p {
   color: var(--c1-d);
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 32px;
-  max-width: 600px;
+  margin: 0;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
-.dark .enroll-section p {
+.dark .enrollment-intro p {
   color: var(--c1-l);
 }
 
-.enroll-button {
-  background-color: var(--c0);
-  color: var(--c1-d);
-  border: none;
-  border-radius: 32px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  padding: 16px 40px;
-  margin: 12px 0;
-  transition: transform var(--ts0) ease;
-}
-.enroll-button:hover {
-  transform: scale(1.15);
-  background-color: var(--c1);
-}
-.enroll-button:active {
-  transform: scale(1);
+.enrollment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .mensa-card {
-  background-color: var(--c2-l);
+  background-color: var(--c2-l-70);
   border: 1px solid var(--c4-l);
   border-radius: 12px;
-  margin: 4px auto;
-  max-width: 850px;
+  box-shadow: var(--sh-l);
   overflow: hidden;
   transition: transform var(--ts0) ease;
 }
 .mensa-card:hover {
-  border: 1px solid var(--c0);
+  border-color: var(--c0);
   transform: translateY(-4px);
 }
 .dark .mensa-card {
-  background-color: var(--c3-d);
+  background-color: var(--c2-d-70);
   border-color: var(--c4-d);
+  box-shadow: var(--sh-d);
 }
 .dark .mensa-card:hover {
-  border: 1px solid var(--c0);
+  border-color: var(--c0);
 }
 
 .mensa-header {
@@ -633,11 +626,12 @@
   border-bottom: 1px solid var(--c4-l);
   display: flex;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  padding: 24px;
   gap: 16px;
 }
 .dark .mensa-header {
-  background-color: var(--c2-d);
+  background-color: var(--c3-d);
   border-color: var(--c4-d);
 }
 
@@ -646,57 +640,74 @@
   color: var(--c1-d);
   border-radius: 50%;
   font-weight: bold;
-  font-size: 20px;
-  width: 48px;
-  height: 48px;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: transform var(--ts0) ease;
 }
+.mensa-card:hover .mensa-icon {
+  transform: scale(1.1);
+}
 
 .mensa-title h3 {
   color: var(--c1-d);
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
 }
 .dark .mensa-title h3 {
   color: var(--c1-l);
 }
 
 .mensa-content {
-  padding: 20px 24px;
+  padding: 32px;
   text-align: left;
 }
-.mensa-content p {
+
+.mensa-content > p:first-child {
   color: var(--c1-d);
-  margin-bottom: 20px;
   font-size: 16px;
+  margin-bottom: 24px;
+  text-align: center;
 }
-.dark .mensa-content p {
+.dark .mensa-content > p:first-child {
   color: var(--c1-l);
 }
 
 .mensa-steps {
+  background-color: var(--c2-l);
+  border: 1px solid var(--c4-l);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin: 24px 0;
+  gap: 20px;
+}
+.dark .mensa-steps {
+  background-color: var(--c2-d);
+  border-color: var(--c4-d);
 }
 
 .step {
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: transform var(--ts0) ease;
+}
+.step:hover {
+  transform: translateX(8px);
 }
 
 .step-number {
-  background-color: var(--c1-d);
-  color: var(--c1-l);
+  background-color: var(--c0);
+  color: var(--c1-d);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -705,22 +716,14 @@
   font-size: 14px;
   transition: transform var(--ts0) ease;
 }
-
-.dark .step-number {
-  background-color: var(--c1-l);
-  color: var(--c1-d);
-}
-
 .step:hover .step-number {
-  background-color: var(--c0);
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .step-text {
   color: var(--c1-d);
   font-size: 16px;
 }
-
 .dark .step-text {
   color: var(--c1-l);
 }
@@ -728,45 +731,119 @@
 .mensa-note {
   background-color: var(--c3-l);
   border-left: 4px solid var(--c0);
-  border-radius: 12px;
-  padding: 12px 16px;
-  margin: 20px 0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 24px 0;
 }
-
 .dark .mensa-note {
-  background-color: var(--c2-d);
+  background-color: var(--c3-d);
 }
 
 .mensa-note p {
   margin: 0;
   font-size: 14px;
   opacity: 0.9;
+  text-align: center;
+}
+
+.mensa-button-container {
+  text-align: center;
+  margin-top: 24px;
 }
 
 .mensa-button {
   background-color: var(--c0);
   color: var(--c1-d);
-  border-radius: 32px;
-  text-align: center;
+  border: none;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
   display: inline-block;
-  padding: 12px 24px;
-  margin: 12px 0;
-  transition: transform var(--ts0) ease;
+  padding: 14px 28px;
+  transition: all var(--ts0) ease;
 }
-
 .mensa-button:hover {
   background-color: var(--c1);
-  transform: scale(1.1);
+  transform: translateY(-2px);
+}
+.mensa-button:active {
+  transform: translateY(0);
 }
 
-.mensa-button:active {
-  transform: scale(1);
+.enrollment-action {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--c1-l-70);
+  border: 1px solid var(--c4-l);
+  border-radius: 12px;
+  transition: transform var(--ts0) ease;
+}
+.dark .enrollment-action {
+  background-color: var(--c2-d-70);
+  border-color: var(--c4-d);
+}
+.enrollment-action:hover {
+  border-color: var(--c0);
+  transform: translateY(-4px);
 }
 
 .enroll-button {
-  margin-top: 20px;
+  background-color: var(--c0);
+  color: var(--c1-d);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  padding: 20px 48px;
+  transition: all var(--ts0) ease;
+}
+.enroll-button:hover {
+  background-color: var(--c1);
+  transform: scale(1.05);
+}
+.enroll-button:active {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .enrollment-intro {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .enrollment-intro p {
+    font-size: 16px;
+  }
+
+  .mensa-content {
+    padding: 24px 20px;
+  }
+
+  .mensa-steps {
+    padding: 20px;
+  }
+
+  .step {
+    gap: 12px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .step-text {
+    font-size: 14px;
+  }
+
+  .enroll-button {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
 }
 
 .enrollment-container {
