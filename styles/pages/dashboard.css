@@ -538,8 +538,8 @@
 .rank-2 .rank-circle,
 .rank-3 .rank-circle {
   box-shadow: 0 0 10px var(--c0), var(--sh-l);
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   font-size: 24px;
   font-weight: 800;
   animation: pulse-r1 2s infinite alternate;
@@ -552,8 +552,8 @@
   border-radius: 50%;
   content: '';
   position: absolute;
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   animation: rotate 20s linear infinite;
 }
 
