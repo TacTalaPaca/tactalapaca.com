@@ -576,7 +576,7 @@
   "screenshots": [
     {
       "src": "assets/manifest/ss_phone.png",
-      "sizes": "1084x2412",
+      "sizes": "390x844",
       "type": "image/png",
       "description": "Mobile view of TacTalaPaca",
       "form_factor": "narrow"
