@@ -1,4 +1,4 @@
-<!-- SHOP PAGE -->
+<!-- PLAYGROUND PAGE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FAVICON ============== -->
     <link rel="shortcut icon" href="/assets/ttp_logo.webp" type="image/x-icon" />
+    <!-- TITLE ================ -->
+    <title>TTP Library</title>
     <!-- DESCRIPTION ========== -->
-    <meta name="description" content="Pacaro by TacTalaPaca" />
+    <meta name="description" content="TTP Library" />
     <!-- CSS LINKS ============ -->
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- ------- -->
@@ -32,16 +34,16 @@
     <!-- NAVIGATION BAR -->
     <div data-include="/blocks/nav.html"></div>
     <style>
-      .nav-pin-toggle-btn.active6::before {
+      .nav-pin-toggle-btn.active2::before {
         transform: rotate(45deg);
       }
-      .nav-active6 .nav-page {
+      .nav-active2 .nav-page {
         background-color: var(--c3-l);
       }
-      .dark .nav-active6 .nav-page {
+      .dark .nav-active2 .nav-page {
         background-color: var(--c3-d);
       }
-      .nav-active6 .nav-page::after {
+      .nav-active2 .nav-page::after {
         content: '';
         position: absolute;
         left: 0;
@@ -54,22 +56,11 @@
     </style>
 
     <main>
-      <div class="shop">
-        <div id="myShop">
-          <a href="https://pacaro.myspreadshop.net">pacaro</a>
-        </div>
-
-        <script>
-          var spread_shop_config = {
-            shopName: 'pacaro',
-            locale: 'en_EU',
-            prefix: 'https://pacaro.myspreadshop.net',
-            baseId: 'myShop',
-          };
-        </script>
-
-        <script type="text/javascript" src="https://pacaro.myspreadshop.net/shopfiles/shopclient/shopclient.nocache.js"></script>
-      </div>
+      <!-- LOGO SECTION -->
+      <a href="/" class="cmp-logo">
+        <img src="/assets/ttp_logo.svg" alt="TacTalaPaca Logo" class="cmp-logo-image" />
+      </a>
+      <h1 class="h1">TTP Library</h1>
 
       <!-- FOOTER -->
       <div data-include="/blocks/ftr.html"></div>

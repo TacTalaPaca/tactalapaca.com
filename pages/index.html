@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- ------- -->
     <link rel="stylesheet" href="/styles/blocks/nav.css" />
-    <link rel="stylesheet" href="/styles/blocks/aff.css" />
     <link rel="stylesheet" href="/styles/blocks/ftr.css" />
     <!-- ------- -->
     <link rel="stylesheet" href="/styles/pages/dashboard.css" />
@@ -48,81 +47,31 @@
   </head>
 
   <body>
-    <!-- MOBILE MENU BUTTON-->
-    <button class="mobile-menu-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="menu-overlay"></div>
-
     <!-- NAVIGATION BAR -->
-    <nav class="nav">
-      <div class="nav-item nav-active">
-        <a href="/" class="nav-page"><span>Dashboard</span></a>
-      </div>
+    <div data-include="/blocks/nav.html"></div>
+    <style>
+      .nav-pin-toggle-btn.active1::before {
+        transform: rotate(45deg);
+      }
+      .nav-active1 .nav-page {
+        background-color: var(--c3-l);
+      }
+      .dark .nav-active1 .nav-page {
+        background-color: var(--c3-d);
+      }
+      .nav-active1 .nav-page::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 15%;
+        width: 4px;
+        height: 70%;
+        background-color: var(--c0);
+        border-radius: 0 2px 2px 0;
+      }
+    </style>
 
-      <div class="nav-item">
-        <a href="/library/" class="nav-page"><span>Library*</span></a>
-        <button class="nav-submenu-toggle" aria-label="Toggle Library submenu" data-target="library-submenu"></button>
-        <div class="nav-submenu" id="library-submenu">
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="/playground/" class="nav-page"><span>Playground*</span></a>
-        <button class="nav-submenu-toggle" aria-label="Toggle Playground submenu" data-target="playground-submenu"></button>
-        <div class="nav-submenu" id="playground-submenu">
-          <a href="/playground/touch-grass/" class="nav-submenu-page">Touch Grass</a>
-          <a href="/playground/scripture-compass/" class="nav-submenu-page">Scripture Compass</a>
-          <a href="/playground/life-calendar/" class="nav-submenu-page">Life Calendar</a>
-          <a href="/playground/morse-code/" class="nav-submenu-page">Morse Code</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="/toolbox/" class="nav-page"><span>Toolbox*</span></a>
-        <button class="nav-submenu-toggle" aria-label="Toggle Toolbox submenu" data-target="toolbox-submenu"></button>
-        <div class="nav-submenu" id="toolbox-submenu">
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-          <a href="/???" class="nav-submenu-page">????????</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="/contact/" class="nav-page"><span>Contact*</span></a>
-      </div>
-
-      <div class="nav-item">
-        <a href="/shop/" class="nav-page"><span>Shop (open)</span></a>
-      </div>
-
-      <div class="nav-item nav-item-pin-toggle">
-        <a class="nav-page nav-pin-toggle-btn" id="navPinBtn" aria-label="Pin navigation menu" aria-pressed="false">
-          <span>Pin Menu</span>
-        </a>
-      </div>
-
-      <div class="nav-item">
-        <a class="nav-page language" id="language"
-          ><span>Languages <br />(Eng/Rom)</span></a
-        >
-      </div>
-
-      <div class="nav-item">
-        <a class="nav-page theme" id="theme"><span>Light/Dark</span></a>
-      </div>
-    </nav>
-
+    <!-- MAIN SECTION -->
     <main>
       <!-- LOGO SECTION -->
       <a href="/" class="cmp-logo">
@@ -144,22 +93,22 @@
       <!-- VERSE OF THE DAY SECTION -->
       <section>
         <h2 class="eng h2">Verse of the Day</h2>
-          <h2 class="rom h2" style="display: none">Versetul Zilei</h2>
+        <h2 class="rom h2" style="display: none">Versetul Zilei</h2>
 
         <div class="verse-container">
           <div class="verse-loading" id="verseLoading">
             <span class="eng">Loading today's verse...</span>
             <span class="rom" style="display: none">Se încarcă versetul de azi...</span>
           </div>
-          
-          <blockquote class="verse-text" id="verseText" style="display: none;"></blockquote>
-          <cite class="verse-reference" id="verseReference" style="display: none;"></cite>
-          
-          <div class="verse-error" id="verseError" style="display: none;">
+
+          <blockquote class="verse-text" id="verseText" style="display: none"></blockquote>
+          <cite class="verse-reference" id="verseReference" style="display: none"></cite>
+
+          <div class="verse-error" id="verseError" style="display: none">
             <p class="eng">Unable to load today's verse. Please try again later.</p>
             <p class="rom" style="display: none">Nu s-a putut încărca versetul de azi. Te rugăm să încerci mai târziu.</p>
           </div>
-          
+
           <div class="verse-attribution">
             <p class="eng">Powered by <a href="https://ourmanna.com/" target="_blank" rel="noopener">OurManna.com</a></p>
             <p class="rom" style="display: none">Susținut de <a href="https://ourmanna.com/" target="_blank" rel="noopener">OurManna.com</a></p>
@@ -255,68 +204,69 @@
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- ENROLLMENT SECTION -->
-        <section class="enrollment-main">
-          <h2 class="eng h2">Wanna' be part of The Team?</h2>
-          <h2 class="rom h2" style="display: none">Vrei să faci parte din Echipă?</h2>
+      <!-- ENROLLMENT SECTION -->
+      <section class="enrollment-main">
+        <h2 class="eng h2">Wanna' be part of The Team?</h2>
+        <h2 class="rom h2" style="display: none">Vrei să faci parte din Echipă?</h2>
 
-          <div class="enrollment-content">
-            <div class="mensa-card">
-              <div class="mensa-header">
-                <div class="mensa-icon">IQ</div>
-                <div class="mensa-title">
-                  <h3 class="eng">MENSA Online IQ Test</h3>
-                  <h3 class="rom" style="display: none">Test IQ MENSA Online</h3>
-                </div>
-              </div>
-
-              <div class="mensa-content">
-                <p class="eng">Before applying, please take a quick assessment:</p>
-                <p class="rom" style="display: none">Înainte de a aplica, te rugăm să faci o evaluare rapidă:</p>
-
-                <div class="mensa-steps">
-                  <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-text eng">Take the free MENSA online IQ test</div>
-                    <div class="step-text rom" style="display: none">Fă testul gratuit MENSA de IQ online</div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-text eng">Take a screenshot of your result</div>
-                    <div class="step-text rom" style="display: none">Fă un screenshot cu rezultatul tău</div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-text eng">Attach the screenshot in the application form</div>
-                    <div class="step-text rom" style="display: none">Atașează screenshot-ul în formularul de aplicare</div>
-                  </div>
-                </div>
-
-                <div class="mensa-note">
-                  <p class="eng">This score helps us understand your thinking patterns - there's no minimum requirement.</p>
-                  <p class="rom" style="display: none">Acest scor ne ajută să înțelegem tiparul tău de gândire - nu există o cerință minimă.</p>
-                </div>
-
-                <div class="mensa-button-container">
-                  <a href="https://test.mensa.no/" target="_blank" class="mensa-button">
-                    <span class="eng">Take the Test</span>
-                    <span class="rom" style="display: none">Fă Testul</span>
-                  </a>
-                </div>
+        <div class="enrollment-content">
+          <div class="mensa-card">
+            <div class="mensa-header">
+              <div class="mensa-icon">IQ</div>
+              <div class="mensa-title">
+                <h3 class="eng">MENSA Online IQ Test</h3>
+                <h3 class="rom" style="display: none">Test IQ MENSA Online</h3>
               </div>
             </div>
 
-            <div class="enrollment-action">
-              <a href="/enrollment/" target="_blank" class="enroll-button">
-                <span class="eng">Apply Now</span>
-                <span class="rom" style="display: none">Aplică Acum</span>
-              </a>
+            <div class="mensa-content">
+              <p class="eng">Before applying, please take a quick assessment:</p>
+              <p class="rom" style="display: none">Înainte de a aplica, te rugăm să faci o evaluare rapidă:</p>
+
+              <div class="mensa-steps">
+                <div class="step">
+                  <div class="step-number">1</div>
+                  <div class="step-text eng">Take the free MENSA online IQ test</div>
+                  <div class="step-text rom" style="display: none">Fă testul gratuit MENSA de IQ online</div>
+                </div>
+
+                <div class="step">
+                  <div class="step-number">2</div>
+                  <div class="step-text eng">Take a screenshot of your result</div>
+                  <div class="step-text rom" style="display: none">Fă un screenshot cu rezultatul tău</div>
+                </div>
+
+                <div class="step">
+                  <div class="step-number">3</div>
+                  <div class="step-text eng">Attach the screenshot in the application form</div>
+                  <div class="step-text rom" style="display: none">Atașează screenshot-ul în formularul de aplicare</div>
+                </div>
+              </div>
+
+              <div class="mensa-note">
+                <p class="eng">This score helps us understand your thinking patterns - there's no minimum requirement.</p>
+                <p class="rom" style="display: none">Acest scor ne ajută să înțelegem tiparul tău de gândire - nu există o cerință minimă.</p>
+              </div>
+
+              <div class="mensa-button-container">
+                <a href="https://test.mensa.no/" target="_blank" class="mensa-button">
+                  <span class="eng">Take the Test</span>
+                  <span class="rom" style="display: none">Fă Testul</span>
+                </a>
+              </div>
             </div>
           </div>
-        </section>
+
+          <div class="enrollment-action">
+            <a href="/enrollment/" target="_blank" class="enroll-button">
+              <span class="eng">Apply Now</span>
+              <span class="rom" style="display: none">Aplică Acum</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- FOOTER -->
       <div data-include="/blocks/ftr.html"></div>

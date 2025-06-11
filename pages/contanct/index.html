@@ -1,4 +1,4 @@
-<!-- SHOP PAGE -->
+<!-- PLAYGROUND PAGE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FAVICON ============== -->
     <link rel="shortcut icon" href="/assets/ttp_logo.webp" type="image/x-icon" />
+    <!-- TITLE ================ -->
+    <title>Contact TTP</title>
     <!-- DESCRIPTION ========== -->
-    <meta name="description" content="Pacaro by TacTalaPaca" />
+    <meta name="description" content="Contact TTP" />
     <!-- CSS LINKS ============ -->
     <link rel="stylesheet" href="/styles/main.css" />
     <!-- ------- -->
@@ -32,16 +34,16 @@
     <!-- NAVIGATION BAR -->
     <div data-include="/blocks/nav.html"></div>
     <style>
-      .nav-pin-toggle-btn.active6::before {
+      .nav-pin-toggle-btn.active5::before {
         transform: rotate(45deg);
       }
-      .nav-active6 .nav-page {
+      .nav-active5 .nav-page {
         background-color: var(--c3-l);
       }
-      .dark .nav-active6 .nav-page {
+      .dark .nav-active5 .nav-page {
         background-color: var(--c3-d);
       }
-      .nav-active6 .nav-page::after {
+      .nav-active5 .nav-page::after {
         content: '';
         position: absolute;
         left: 0;
@@ -54,22 +56,38 @@
     </style>
 
     <main>
-      <div class="shop">
-        <div id="myShop">
-          <a href="https://pacaro.myspreadshop.net">pacaro</a>
-        </div>
+      <!-- LOGO SECTION -->
+      <a href="/" class="cmp-logo">
+        <img src="/assets/ttp_logo.svg" alt="TacTalaPaca Logo" class="cmp-logo-image" />
+      </a>
+      <h1 class="h1">Contact TTP</h1>
 
-        <script>
-          var spread_shop_config = {
-            shopName: 'pacaro',
-            locale: 'en_EU',
-            prefix: 'https://pacaro.myspreadshop.net',
-            baseId: 'myShop',
+      <iframe
+        data-tally-src="https://tally.so/embed/3EgapN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="475"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Contact form
+"></iframe>
+      <script>
+        var d = document,
+          w = 'https://tally.so/widgets/embed.js',
+          v = function () {
+            'undefined' != typeof Tally
+              ? Tally.loadEmbeds()
+              : d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function (e) {
+                  e.src = e.dataset.tallySrc;
+                });
           };
-        </script>
-
-        <script type="text/javascript" src="https://pacaro.myspreadshop.net/shopfiles/shopclient/shopclient.nocache.js"></script>
-      </div>
+        if ('undefined' != typeof Tally) v();
+        else if (d.querySelector('script[src="' + w + '"]') == null) {
+          var s = d.createElement('script');
+          (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
+        }
+      </script>
 
       <!-- FOOTER -->
       <div data-include="/blocks/ftr.html"></div>

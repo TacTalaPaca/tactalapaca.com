@@ -65,7 +65,7 @@
 .nav-page::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -2px;
   width: 60px;
   height: 60px;
   background: var(--icon-url, url(/assets/icons/home1.svg)) center/var(--icon-size, 55%) no-repeat;
@@ -138,25 +138,6 @@
 
 .nav-pin-toggle-btn.active::before {
   transform: rotate(45deg);
-}
-.nav-active .nav-page {
-  background-color: var(--c3-l);
-}
-
-.dark .nav-active .nav-page {
-  background-color: var(--c3-d);
-}
-
-.nav-active .nav-page::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 15%;
-  width: 4px;
-  height: 70%;
-  background-color: var(--c0);
-  border-radius: 0 2px 2px 0;
-  pointer-events: none;
 }
 
 .nav-submenu {
