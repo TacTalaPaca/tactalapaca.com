@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline - TacTalaPaca</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-weight: 600;
+        background-color: #fafafa;
+        color: #121212;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+        user-select: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+          color: #fafafa;
+        }
+      }
+
+      .logo {
+        background-color: #00e385;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        padding: 18px 28px;
+        margin-bottom: 48px;
+        box-shadow: 0 0 0 0 rgba(0, 227, 133, 0.7), 0 0 0 15px rgba(0, 227, 133, 0.4), 0 0 0 30px rgba(0, 227, 133, 0.2);
+        border: 2px solid #00c374;
+      }
+
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        position: relative;
+        display: inline-block;
+      }
+
+      h1::after {
+        content: '';
+        background-color: #00e385;
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 3px;
+        border-radius: 2px;
+      }
+
+      .message {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 450px;
+        margin: 24px 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .message {
+          background-color: #1a1a1a;
+          border-color: #333;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .message p {
+        font-size: 18px;
+        line-height: 1.5;
+        opacity: 0.9;
+        margin-bottom: 12px;
+      }
+
+      .message p:last-child {
+        margin-bottom: 0;
+      }
+
+      .cache-info {
+        background-color: rgba(0, 227, 133, 0.12);
+        border: 1px solid #00e385;
+        border-radius: 6px;
+        padding: 12px;
+        margin: 12px 0;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #00c374;
+        font-weight: 500;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .cache-info {
+          background-color: rgba(0, 227, 133, 0.15);
+          color: #00e385;
+        }
+      }
+
+      .retry-button {
+        background-color: #00e385;
+        color: #000;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 24px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        margin-top: 8px;
+      }
+
+      .retry-button:hover {
+        background-color: #00c374;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Offline Page</div>
+    <h1>TacTalaPaca</h1>
+
+    <div class="message">
+      <p>You're currently offline. Please check your internet connection and try again.</p>
+      <div class="cache-info">You can still browse pages you've previously visited they're cached locally!</div>
+      <p>We'll be here when you get back online!</p>
+    </div>
+
+    <button class="retry-button" onclick="window.location.reload()">Try Again</button>
+  </body>
+</html>

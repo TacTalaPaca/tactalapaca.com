@@ -19,8 +19,14 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/pages/dashboard.css" />
     <!-- JS LINKS ============= -->
-    <link rel="manifest" href="manifest.json" />
     <script src="/scripts/theme.js"></script>
+    <!-- PWA ================== -->
+    <link rel="manifest" href="/manifest.json" />
+    <script defer>
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('/scripts/sw.js');
+      }
+    </script>
   </head>
 
   <!-- ===================================== -->
