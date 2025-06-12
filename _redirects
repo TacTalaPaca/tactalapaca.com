@@ -4,11 +4,10 @@
 /scripts/* /scripts/:splat 200
 /styles/* /styles/:splat 200
 /manifest.json /manifest.json 200
-/offline.html /offline.html 200
+/offline /offline 200
 /ads.txt /ads.txt 200
 /sw.js /sw.js 200
 /sw-reg.js /sw-reg.js 200
-/_redirects /_redirects 200
 
 # Redirect everything else to /pages/
 /* /pages/:splat 200

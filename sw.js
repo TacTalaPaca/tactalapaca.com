@@ -1,4 +1,4 @@
-// Version: 1.0.1
+// Version: 1.0.2
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
 const CACHE = 'pwabuilder-offline-page';
@@ -7,7 +7,7 @@ const PERIODIC_SYNC_TAG = 'periodic-content-sync';
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
-const offlineFallbackPage = '/offline.html';
+const offlineFallbackPage = '/offline/';
 
 self.addEventListener('message', (event) => {
   console.log('SW: Message received:', event.data);
