@@ -22,11 +22,7 @@
     <script src="/scripts/theme.js"></script>
     <!-- PWA ================== -->
     <link rel="manifest" href="/manifest.json" />
-    <script defer>
-      if (typeof navigator.serviceWorker !== 'undefined') {
-        navigator.serviceWorker.register('/scripts/sw.js');
-      }
-    </script>
+    <script src="/scripts/sw-reg.js" defer></script>
   </head>
 
   <!-- ===================================== -->

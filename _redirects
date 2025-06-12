@@ -6,6 +6,7 @@
 /manifest.json /manifest.json 200
 /offline.html /offline.html 200
 /ads.txt /ads.txt 200
+/sw.js /sw.js 200
 
 # Redirect everything else to /pages/
 /* /pages/:splat 200

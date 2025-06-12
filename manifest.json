@@ -2,6 +2,7 @@
   "name": "TacTalaPaca",
   "short_name": "TTP",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "description": "TacTalaPaca official PWA",
   "lang": "en",
@@ -9,6 +10,8 @@
   "theme_color": "#00e385",
   "background_color": "#00e385",
   "orientation": "any",
+  "categories": ["entertainment", "games"],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "assets/manifest/windows11/SmallTile.scale-100.png",
@@ -414,7 +417,7 @@
       "src": "assets/manifest/android/android-launchericon-512-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     },
     {
       "src": "assets/manifest/android/android-launchericon-192-192.png",
