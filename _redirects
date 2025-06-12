@@ -1,19 +1,15 @@
-# Static assets and root files - serve directly, don't redirect
+# Don't redirect static asset folders
 /assets/* /assets/:splat 200
 /blocks/* /blocks/:splat 200
 /scripts/* /scripts/:splat 200
 /styles/* /styles/:splat 200
+/src/* /src/:splat 200
 /manifest.json /manifest.json 200
 /offline.html /offline.html 200
 /ads.txt /ads.txt 200
 /sw.js /sw.js 200
+/sw-reg.js /sw-reg.js 200
 /_redirects /_redirects 200
 
-# Page directory access - serve directly
-/pages/* /pages/:splat 200
-
-# Root homepage - redirect to pages folder
-/ /pages/index.html 200
-
-# Catch-all for other pages - redirect to pages folder
+# Redirect everything else to /pages/
 /* /pages/:splat 200
