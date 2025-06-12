@@ -3,7 +3,6 @@
 /blocks/* /blocks/:splat 200
 /scripts/* /scripts/:splat 200
 /styles/* /styles/:splat 200
-/src/* /src/:splat 200
 /manifest.json /manifest.json 200
 /offline.html /offline.html 200
 /ads.txt /ads.txt 200
