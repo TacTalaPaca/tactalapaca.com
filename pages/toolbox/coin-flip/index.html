@@ -1,0 +1,501 @@
+<!-- PLAYGROUND PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FAVICON ============== -->
+    <link rel="shortcut icon" href="/assets/ttp_logo.webp" type="image/x-icon" />
+    <!-- TITLE ================ -->
+    <title>TTP Coin-flip</title>
+    <!-- DESCRIPTION ========== -->
+    <meta name="description" content="TTP Coin-flip" />
+    <!-- CSS LINKS ============ -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- ------- -->
+    <link rel="stylesheet" href="/styles/blocks/nav.css" />
+    <link rel="stylesheet" href="/styles/blocks/ftr.css" />
+    <!-- FONTS ================ -->
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/LibreBaskerville-Italic.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- JS LINKS ============= -->
+    <script src="/scripts/include.js" defer></script>
+    <script src="/scripts/language.js"></script>
+    <script src="/scripts/theme.js"></script>
+    <script src="/scripts/mobile-nav.js" defer></script>
+    <script src="/scripts/nav-pin.js" defer></script>
+    <!-- BMAC WIDGET -->
+    <script defer data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tactalapaca" data-description="Support us on Buy me a coffee!" data-message="" data-color="#00e385" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <!-- PWA ================== -->
+    <link rel="manifest" href="/manifest.json" />
+    <script src="/sw-reg.js" defer></script>
+  </head>
+
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div data-include="/blocks/nav.html"></div>
+    <style>
+      .nav-pin-toggle-btn.active4::before {
+        transform: rotate(45deg);
+      }
+      .nav-active4 .nav-page {
+        background-color: var(--c3-l);
+      }
+      .dark .nav-active4 .nav-page {
+        background-color: var(--c3-d);
+      }
+      .nav-active4 .nav-page::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 15%;
+        width: 4px;
+        height: 70%;
+        background-color: var(--c0);
+        border-radius: 0 2px 2px 0;
+      }
+    </style>
+
+    <main>
+      <!-- LOGO SECTION -->
+      <a href="/" class="cmp-logo">
+        <img src="/assets/ttp_logo.svg" alt="TacTalaPaca Logo" class="cmp-logo-image" />
+      </a>
+      <h1 class="h1">Coin-Flip</h1>
+
+      <!-- COIN FLIP SECTION -->
+      <section>
+        <div class="coin-flip-container">
+          <div class="coin-container">
+            <div class="coin" id="coin">
+              <div class="coin-side coin-heads">
+                <div class="coin-text">
+                  <span class="eng">HEADS</span>
+                  <span class="rom">CAP</span>
+                </div>
+              </div>
+              <div class="coin-side coin-tails">
+                <div class="coin-text">
+                  <span class="eng">TAILS</span>
+                  <span class="rom">PAJURĂ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-controls">
+            <button class="flip-button" id="flipButton">
+              <span class="flip-button-text">
+                <span class="eng">FLIP COIN</span>
+                <span class="rom">ARUNCĂ MONEDA</span>
+              </span>
+            </button>
+            <div class="result-display" id="resultDisplay">
+              <span class="eng">Click the button to flip the coin!</span>
+              <span class="rom">Apasă butonul pentru a arunca moneda!</span>
+            </div>
+
+            <div class="stats-display" id="statsDisplay">
+              <div class="stats-header">
+                <span class="eng">Statistics</span>
+                <span class="rom">Statistici</span>
+              </div>
+              <div class="stats-content">
+                <div class="stats-item">
+                  <div class="stats-label">
+                    <span class="eng">Heads</span>
+                    <span class="rom">Cap</span>
+                  </div>
+                  <div class="stats-value">
+                    <span id="headsCount">0</span>
+                    <span class="stats-percent">(<span id="headsPercent">0%</span>)</span>
+                  </div>
+                </div>
+                <div class="stats-divider"></div>
+                <div class="stats-item">
+                  <div class="stats-label">
+                    <span class="eng">Tails</span>
+                    <span class="rom">Pajură</span>
+                  </div>
+                  <div class="stats-value">
+                    <span id="tailsCount">0</span>
+                    <span class="stats-percent">(<span id="tailsPercent">0%</span>)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .coin-flip-container {
+          background-color: var(--c2-l-70);
+          border: 1px solid var(--c4-l);
+          border-radius: 12px;
+          box-shadow: var(--sh-l);
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 40px 20px;
+          text-align: center;
+          transition: transform var(--ts0) ease;
+        }
+        .dark .coin-flip-container {
+          background-color: var(--c2-d-70);
+          border-color: var(--c4-d);
+          box-shadow: var(--sh-d);
+        }
+        .coin-flip-container:hover {
+          border-color: var(--c0);
+          transform: translateY(-4px);
+        }
+
+        .coin-container {
+          perspective: 1000px;
+          margin-bottom: 40px;
+          height: 420px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .coin {
+          width: 400px;
+          aspect-ratio: 1 / 1;
+          position: relative;
+          transform-style: preserve-3d;
+          cursor: pointer;
+        }
+
+        .coin-side {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          backface-visibility: hidden;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .coin-heads {
+          background-image: url('vinyl.png');
+        }
+
+        .coin-tails {
+          background-image: url('vinyl3.png');
+          transform: rotateY(180deg);
+        }
+
+        .coin-text {
+          width: 45%;
+          height: 45%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 32px;
+          font-weight: bold;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+          letter-spacing: 2px;
+          background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.4) 100%);
+          border: 3px solid rgba(0, 0, 0, 0.8);
+          border-radius: 50%;
+          backdrop-filter: blur(3px);
+          box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1), inset 0 2px 10px rgba(0, 0, 0, 0.3);
+          color: var(--c1-l);
+        }
+
+        .flip-controls {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .flip-button {
+          background-color: var(--c2-l);
+          color: var(--c1-d);
+          border: 1px solid var(--c4-l);
+          border-radius: 12px;
+          padding: 20px 40px;
+          font-size: 18px;
+          font-weight: bold;
+          font-family: 'Libre Baskerville', serif;
+          cursor: pointer;
+          transition: transform var(--ts0) ease;
+          box-shadow: var(--sh-l);
+          position: relative;
+          overflow: hidden;
+        }
+        .dark .flip-button {
+          background-color: var(--c2-d);
+          color: var(--c1-l);
+          border-color: var(--c4-d);
+          box-shadow: var(--sh-d);
+        }
+
+        .flip-button:hover {
+          border-color: var(--c0);
+          transform: translateY(-4px) scale(1.05);
+        }
+
+        .flip-button:active {
+          transform: translateY(-2px) scale(1.02);
+        }
+
+        .flip-button:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          transform: none;
+          border-color: var(--c4-l);
+        }
+        .dark .flip-button:disabled {
+          border-color: var(--c4-d);
+        }
+
+        .flip-button-text {
+          position: relative;
+          z-index: 2;
+        }
+
+        .result-display {
+          background-color: var(--c2-l);
+          border: 1px solid var(--c4-l);
+          border-radius: 12px;
+          padding: 20px 32px;
+          font-size: 18px;
+          font-weight: bold;
+          color: var(--c1-d);
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: var(--sh-l);
+        }
+        .dark .result-display {
+          background-color: var(--c2-d);
+          border-color: var(--c4-d);
+          color: var(--c1-l);
+          box-shadow: var(--sh-d);
+        }
+
+        .result-display.result-heads {
+          border-color: var(--c0);
+          background: linear-gradient(135deg, rgba(0, 227, 133, 0.1), rgba(0, 195, 116, 0.1));
+          color: var(--c0);
+        }
+
+        .result-display.result-tails {
+          border-color: var(--c1);
+          background: linear-gradient(135deg, rgba(0, 195, 116, 0.1), rgba(0, 227, 133, 0.1));
+          color: var(--c1);
+        }
+
+        .stats-display {
+          background-color: var(--c2-l);
+          border: 1px solid var(--c4-l);
+          border-radius: 12px;
+          padding: 20px;
+          font-weight: bold;
+          color: var(--c1-d);
+          box-shadow: var(--sh-l);
+        }
+        .dark .stats-display {
+          background-color: var(--c2-d);
+          border-color: var(--c4-d);
+          color: var(--c1-l);
+          box-shadow: var(--sh-d);
+        }
+
+        .stats-header {
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 16px;
+          color: var(--c0);
+        }
+
+        .stats-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .stats-item {
+          width: 100px;
+          text-align: center;
+          flex: 1;
+        }
+
+        .stats-label {
+          font-size: 16px;
+          margin-bottom: 8px;
+          opacity: 0.8;
+        }
+
+        .stats-value {
+          font-size: 24px;
+          font-weight: 800;
+        }
+
+        .stats-percent {
+          font-size: 16px;
+          opacity: 0.7;
+          margin-left: 8px;
+        }
+
+        .stats-divider {
+          width: 1px;
+          height: 60px;
+          background-color: var(--c4-l);
+          margin: 0 20px;
+        }
+        .dark .stats-divider {
+          background-color: var(--c4-d);
+        }
+
+        @media (max-width: 768px) {
+          .coin-flip-container {
+            padding: 20px 15px;
+          }
+
+          .coin {
+            width: 300px;
+            height: 300px;
+          }
+
+          .coin-container {
+            height: 320px;
+            margin-bottom: 30px;
+          }
+
+          .coin-text {
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
+
+          .flip-button {
+            padding: 16px 32px;
+            font-size: 16px;
+          }
+
+          .result-display {
+            padding: 16px 24px;
+            font-size: 16px;
+            min-height: 50px;
+          }
+
+          .stats-display {
+            padding: 16px;
+          }
+
+          .stats-header {
+            font-size: 16px;
+            margin-bottom: 12px;
+          }
+
+          .stats-content {
+            flex-direction: column;
+            gap: 16px;
+          }
+
+          .stats-value {
+            font-size: 20px;
+          }
+
+          .stats-divider {
+            width: 150px;
+            height: 1px;
+            margin: 0;
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const coin = document.getElementById('coin');
+          const flipButton = document.getElementById('flipButton');
+          const resultDisplay = document.getElementById('resultDisplay');
+          const headsCountEl = document.getElementById('headsCount');
+          const tailsCountEl = document.getElementById('tailsCount');
+          const headsPercentEl = document.getElementById('headsPercent');
+          const tailsPercentEl = document.getElementById('tailsPercent');
+
+          let isFlipping = false;
+          let currentRotation = 0;
+          let headsCount = 0;
+          let tailsCount = 0;
+
+          function updateStats() {
+            const total = headsCount + tailsCount;
+            if (total === 0) {
+              headsPercentEl.textContent = '0%';
+              tailsPercentEl.textContent = '0%';
+            } else {
+              const headsPercent = Math.round((headsCount / total) * 100);
+              const tailsPercent = Math.round((tailsCount / total) * 100);
+              headsPercentEl.textContent = headsPercent + '%';
+              tailsPercentEl.textContent = tailsPercent + '%';
+            }
+            headsCountEl.textContent = headsCount;
+            tailsCountEl.textContent = tailsCount;
+          }
+
+          function flipCoin() {
+            if (isFlipping) return;
+
+            isFlipping = true;
+            flipButton.disabled = true;
+            flipButton.querySelector('.flip-button-text').innerHTML = '<span class="eng">FLIPPING...</span><span class="rom">SE ARUNCĂ...</span>';
+
+            resultDisplay.className = 'result-display';
+            resultDisplay.innerHTML = '<span class="eng">Flipping...</span><span class="rom">Se aruncă...</span>';
+
+            let randomValue;
+            if (window.crypto && window.crypto.getRandomValues) {
+              const array = new Uint32Array(1);
+              window.crypto.getRandomValues(array);
+              randomValue = array[0] / 0x100000000;
+            } else {
+              randomValue = Math.random();
+            }
+
+            const isHeads = randomValue < 0.5;
+            const spins = 5 + Math.floor(Math.random() * 3);
+            const targetRotation = currentRotation + spins * 360 + (isHeads ? 0 : 180);
+
+            coin.style.transition = 'transform 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            coin.style.transform = `rotateY(${targetRotation}deg)`;
+            currentRotation = targetRotation;
+
+            setTimeout(() => {
+              if (isHeads) {
+                headsCount++;
+                resultDisplay.innerHTML = '<span class="eng">HEADS!</span><span class="rom">CAP!</span>';
+                resultDisplay.className = 'result-display result-heads';
+              } else {
+                tailsCount++;
+                resultDisplay.innerHTML = '<span class="eng">TAILS!</span><span class="rom">PAJURĂ!</span>';
+                resultDisplay.className = 'result-display result-tails';
+              }
+
+              updateStats();
+              flipButton.disabled = false;
+              flipButton.querySelector('.flip-button-text').innerHTML = '<span class="eng">FLIP AGAIN</span><span class="rom">ARUNCĂ DIN NOU</span>';
+              isFlipping = false;
+            }, 1500);
+          }
+
+          flipButton.addEventListener('click', flipCoin);
+          coin.addEventListener('click', flipCoin);
+        });
+      </script>
+
+      <!-- FOOTER -->
+      <div data-include="/blocks/ftr.html"></div>
+    </main>
+  </body>
+</html>

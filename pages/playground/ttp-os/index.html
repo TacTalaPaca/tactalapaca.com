@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TTP OS - Advanced Desktop Environment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="desktop">
+      <!-- Desktop Icons -->
+      <div class="desktop-icons">
+        <div class="desktop-icon" data-app="file-manager">
+          <div class="icon"><i class="fas fa-folder"></i></div>
+          <span>File Manager</span>
+        </div>
+        <div class="desktop-icon" data-app="text-editor">
+          <div class="icon"><i class="fas fa-file-alt"></i></div>
+          <span>Text Editor</span>
+        </div>
+        <div class="desktop-icon" data-app="browser">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <span>Web Browser</span>
+        </div>
+        <div class="desktop-icon" data-app="calculator">
+          <div class="icon"><i class="fas fa-calculator"></i></div>
+          <span>Calculator</span>
+        </div>
+        <div class="desktop-icon" data-app="terminal">
+          <div class="icon"><i class="fas fa-terminal"></i></div>
+          <span>Terminal</span>
+        </div>
+        <div class="desktop-icon" data-app="media-player">
+          <div class="icon"><i class="fas fa-play-circle"></i></div>
+          <span>Media Player</span>
+        </div>
+        <div class="desktop-icon" data-app="image-viewer">
+          <div class="icon"><i class="fas fa-image"></i></div>
+          <span>Image Viewer</span>
+        </div>
+        <div class="desktop-icon" data-app="settings">
+          <div class="icon"><i class="fas fa-cog"></i></div>
+          <span>Settings</span>
+        </div>
+      </div>
+
+      <!-- Windows Container -->
+      <div id="windows-container"></div>
+
+      <!-- Context Menu -->
+      <div id="context-menu" class="context-menu hidden">
+        <div class="context-item" data-action="refresh">
+          <i class="fas fa-sync-alt context-icon"></i>
+          <span>Refresh</span>
+        </div>
+        <div class="context-item" data-action="new-folder">
+          <i class="fas fa-folder-plus context-icon"></i>
+          <span>New Folder</span>
+        </div>
+        <div class="context-item" data-action="paste">
+          <i class="fas fa-paste context-icon"></i>
+          <span>Paste</span>
+        </div>
+        <div class="context-item" data-action="sort">
+          <i class="fas fa-sort context-icon"></i>
+          <span>Sort by</span>
+        </div>
+        <div class="context-item" data-action="properties">
+          <i class="fas fa-info-circle context-icon"></i>
+          <span>Properties</span>
+        </div>
+      </div>
+
+      <!-- Start Menu -->
+      <div id="start-menu" class="start-menu hidden">
+        <div class="start-menu-header">
+          <div class="user-info">
+            <div class="user-avatar"><i class="fas fa-user"></i></div>
+            <div class="user-name">Administrator</div>
+          </div>
+          <div class="start-menu-search">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Type here to search" id="start-search" />
+          </div>
+        </div>
+
+        <div class="start-menu-nav">
+          <button class="nav-btn active" data-tab="pinned">Pinned</button>
+          <button class="nav-btn" data-tab="all-apps">All Apps</button>
+          <button class="nav-btn" data-tab="recent">Recent</button>
+        </div>
+
+        <div class="start-menu-content">
+          <div class="tab-content" id="pinned-tab">
+            <div class="start-menu-section">
+              <h3>Pinned Applications</h3>
+              <div class="app-grid">
+                <div class="app-tile" data-app="file-manager">
+                  <div class="app-icon"><i class="fas fa-folder"></i></div>
+                  <span>Files</span>
+                </div>
+                <div class="app-tile" data-app="text-editor">
+                  <div class="app-icon"><i class="fas fa-file-alt"></i></div>
+                  <span>Editor</span>
+                </div>
+                <div class="app-tile" data-app="browser">
+                  <div class="app-icon"><i class="fas fa-globe"></i></div>
+                  <span>Browser</span>
+                </div>
+                <div class="app-tile" data-app="calculator">
+                  <div class="app-icon"><i class="fas fa-calculator"></i></div>
+                  <span>Calculator</span>
+                </div>
+                <div class="app-tile" data-app="terminal">
+                  <div class="app-icon"><i class="fas fa-terminal"></i></div>
+                  <span>Terminal</span>
+                </div>
+                <div class="app-tile" data-app="media-player">
+                  <div class="app-icon"><i class="fas fa-play-circle"></i></div>
+                  <span>Media</span>
+                </div>
+                <div class="app-tile" data-app="image-viewer">
+                  <div class="app-icon"><i class="fas fa-image"></i></div>
+                  <span>Images</span>
+                </div>
+                <div class="app-tile" data-app="settings">
+                  <div class="app-icon"><i class="fas fa-cog"></i></div>
+                  <span>Settings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content hidden" id="all-apps-tab">
+            <div class="start-menu-section">
+              <h3>All Applications</h3>
+              <div class="app-list">
+                <div class="app-category">
+                  <h4>System</h4>
+                  <div class="category-apps">
+                    <div class="app-tile" data-app="file-manager">
+                      <div class="app-icon"><i class="fas fa-folder"></i></div>
+                      <span>File Manager</span>
+                    </div>
+                    <div class="app-tile" data-app="terminal">
+                      <div class="app-icon"><i class="fas fa-terminal"></i></div>
+                      <span>Terminal</span>
+                    </div>
+                    <div class="app-tile" data-app="settings">
+                      <div class="app-icon"><i class="fas fa-cog"></i></div>
+                      <span>Settings</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-category">
+                  <h4>Productivity</h4>
+                  <div class="category-apps">
+                    <div class="app-tile" data-app="text-editor">
+                      <div class="app-icon"><i class="fas fa-file-alt"></i></div>
+                      <span>Text Editor</span>
+                    </div>
+                    <div class="app-tile" data-app="calculator">
+                      <div class="app-icon"><i class="fas fa-calculator"></i></div>
+                      <span>Calculator</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-category">
+                  <h4>Internet</h4>
+                  <div class="category-apps">
+                    <div class="app-tile" data-app="browser">
+                      <div class="app-icon"><i class="fas fa-globe"></i></div>
+                      <span>Web Browser</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-category">
+                  <h4>Media</h4>
+                  <div class="category-apps">
+                    <div class="app-tile" data-app="media-player">
+                      <div class="app-icon"><i class="fas fa-play-circle"></i></div>
+                      <span>Media Player</span>
+                    </div>
+                    <div class="app-tile" data-app="image-viewer">
+                      <div class="app-icon"><i class="fas fa-image"></i></div>
+                      <span>Image Viewer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content hidden" id="recent-tab">
+            <div class="start-menu-section">
+              <h3>Recent Files</h3>
+              <div class="recent-files">
+                <div class="file-item">
+                  <i class="fas fa-file-word file-icon"></i>
+                  <div class="file-info">
+                    <div class="file-name">Project Report.docx</div>
+                    <div class="file-path">Documents</div>
+                  </div>
+                </div>
+                <div class="file-item">
+                  <i class="fas fa-file-image file-icon"></i>
+                  <div class="file-info">
+                    <div class="file-name">Screenshot_2024.png</div>
+                    <div class="file-path">Pictures</div>
+                  </div>
+                </div>
+                <div class="file-item">
+                  <i class="fas fa-file-code file-icon"></i>
+                  <div class="file-info">
+                    <div class="file-name">script.js</div>
+                    <div class="file-path">Development</div>
+                  </div>
+                </div>
+                <div class="file-item">
+                  <i class="fas fa-file-pdf file-icon"></i>
+                  <div class="file-info">
+                    <div class="file-name">Manual.pdf</div>
+                    <div class="file-path">Downloads</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="start-menu-footer">
+          <div class="footer-left">
+            <button class="settings-btn">
+              <i class="fas fa-cog"></i>
+            </button>
+            <button class="theme-toggle-btn" id="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+          <div class="power-options">
+            <button class="power-btn" data-menu="power">
+              <i class="fas fa-power-off"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <div class="taskbar-left">
+        <button id="start-button" class="start-button">
+          <i class="fas fa-th"></i>
+        </button>
+        <div class="taskbar-apps" id="taskbar-apps"></div>
+      </div>
+      <div class="taskbar-right">
+        <div class="system-tray">
+          <div class="tray-icon" data-tooltip="Volume" data-menu="volume">
+            <i class="fas fa-volume-up"></i>
+          </div>
+          <div class="tray-icon" data-tooltip="Network" data-menu="network">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <div class="tray-icon" data-tooltip="Battery" data-menu="battery">
+            <i class="fas fa-battery-three-quarters"></i>
+          </div>
+          <div class="tray-icon" data-tooltip="Notifications" data-menu="notifications">
+            <i class="fas fa-bell"></i>
+          </div>
+        </div>
+        <div class="clock" id="clock" data-menu="calendar">
+          <div class="time">12:00 PM</div>
+          <div class="date">1/1/2024</div>
+        </div>
+      </div>
+    </div>
+    <!-- System Tray Menus -->
+    <!-- Volume Menu -->
+    <div id="volume-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-volume-up tray-menu-icon"></i>
+        <div class="tray-menu-title">Volume</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-slider">
+          <i class="fas fa-volume-down"></i>
+          <input type="range" class="slider" id="volume-slider" min="0" max="100" value="70" />
+          <i class="fas fa-volume-up"></i>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-desktop tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">System Sounds</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-microphone tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Microphone</span>
+        </div>
+      </div>
+    </div>
+    <!-- Network Menu -->
+    <div id="network-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-wifi tray-menu-icon"></i>
+        <div class="tray-menu-title">Network</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-item">
+          <i class="fas fa-wifi tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">TTP-Network (Connected)</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-ethernet tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Ethernet</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-cog tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Network Settings</span>
+        </div>
+      </div>
+    </div>
+    <!-- Battery Menu -->
+    <div id="battery-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-battery-three-quarters tray-menu-icon"></i>
+        <div class="tray-menu-title">Battery</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-item">
+          <i class="fas fa-bolt tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">75% - 2h 30m remaining</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-leaf tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Power Saver Mode</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-cog tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Power Settings</span>
+        </div>
+      </div>
+    </div>
+    <!-- Notifications Menu -->
+    <div id="notifications-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-bell tray-menu-icon"></i>
+        <div class="tray-menu-title">Notifications</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-item">
+          <i class="fas fa-info-circle tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">System update available</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-envelope tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">2 new messages</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-times tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Clear all notifications</span>
+        </div>
+      </div>
+    </div>
+    <!-- Calendar Menu -->
+    <div id="calendar-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-calendar tray-menu-icon"></i>
+        <div class="tray-menu-title">Calendar</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-item">
+          <i class="fas fa-clock tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Today - June 12, 2025</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-calendar-plus tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Add Event</span>
+        </div>
+        <div class="tray-menu-item">
+          <i class="fas fa-cog tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Calendar Settings</span>
+        </div>
+      </div>
+    </div>
+    <!-- Power Menu -->
+    <div id="power-menu" class="tray-menu hidden">
+      <div class="tray-menu-header">
+        <i class="fas fa-power-off tray-menu-icon"></i>
+        <div class="tray-menu-title">Power Options</div>
+      </div>
+      <div class="tray-menu-content">
+        <div class="tray-menu-item" data-action="lock">
+          <i class="fas fa-lock tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Lock</span>
+        </div>
+        <div class="tray-menu-item" data-action="sleep">
+          <i class="fas fa-moon tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Sleep</span>
+        </div>
+        <div class="tray-menu-item" data-action="restart">
+          <i class="fas fa-redo tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Restart</span>
+        </div>
+        <div class="tray-menu-item" data-action="shutdown">
+          <i class="fas fa-power-off tray-menu-item-icon"></i>
+          <span class="tray-menu-item-text">Shut down</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
